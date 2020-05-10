@@ -1,0 +1,40 @@
+.menu{
+    text-align: center;
+}
+.item{
+    color: white;
+    font-family: CenturyGothic;
+    font-size: 20;
+    text-align: center;
+    display: inline-block;
+    width: 248px
+}
+
+.image{
+    cursor: pointer;
+    width: 90%;
+}
+
+
+body{
+    image-rendering: pixelated;
+    background-image: url(img/stars.png);
+    background-size: cover;
+
+}
+
+@font-face {
+    font-family:CenturyGothic;
+    src: url(fonts/centurygothic.ttf);
+  }
+
+  .title{
+      text-align-last: center;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      color: white;
+      font-family: CenturyGothic;
+  }
+body{
+    background-attachment: fixed;
+}
