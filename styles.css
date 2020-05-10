@@ -1,6 +1,33 @@
 .menu{
     text-align: center;
 }
+
+.socialmedia{
+    height: 90;
+    width: 100%;
+    background-image: url(images/stars-transparent.png);
+    margin: 140 0 0 0;
+    text-align: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+h3{
+    text-align-last: center; 
+    color: white; 
+    font-family: CenturyGothic;
+}
+h2{
+    text-align-last: center; 
+    color: white; 
+    font-family: CenturyGothic;
+}
+h1{
+    text-align-last: center; 
+    color: white; 
+    font-family: CenturyGothic;
+}
 .item{
     color: white;
     font-family: CenturyGothic;
@@ -10,6 +37,17 @@
     width: 248px
 }
 
+.icon{
+    text-align: center;
+    display: inline-block;
+    image-rendering: auto;
+    width: 65px;
+    filter: invert(100%);
+    margin: 10 10 10 10;
+}
+html {
+    scroll-behavior: smooth;
+  }
 .image{
     cursor: pointer;
     width: 90%;
@@ -20,6 +58,7 @@ body{
     image-rendering: pixelated;
     background-image: url(img/stars.png);
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
@@ -29,12 +68,50 @@ body{
   }
 
   .title{
-      text-align-last: center;
       margin-top: 100px;
       margin-bottom: 100px;
-      color: white;
-      font-family: CenturyGothic;
+
   }
-body{
-    background-attachment: fixed;
+
+
+h1.title{
+    color: white;
+    font-family: CenturyGothic;
+    text-align-last: center;
+    font-size: 30;
+    margin: 0 0 0 0;
+
+}
+p.title{
+    color: white;
+    font-family: CenturyGothic;
+    text-align-last: center;
+    font-size: 10;
+    margin: 0 0 50 0;
+}
+
+
+.album{
+    margin: 100 0 250 0;
+    color: white;
+    font-family: CenturyGothic;
+    
+    margin-left: 25%;
+
+}
+
+.cover{
+    float:right;
+    width: 20%;
+    margin-right: 40%;
+    margin-left: 5%;
+    image-rendering: high-quality;
+}
+
+.stars-decoration{
+    height: 500px;
+    margin: 200px 0 0px 0;
+    background-size: cover;
+    image-rendering: pixelated;
+    background-image: url(images/stars-transparent.png);
 }
