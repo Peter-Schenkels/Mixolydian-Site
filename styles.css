@@ -13,6 +13,11 @@
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    
+}
+
+a{
+    text-decoration: none;
 }
 
 h3{
@@ -46,6 +51,7 @@ h1{
     width: 65px;
     filter: invert(100%);
     margin: 10 10 10 10;
+    
 }
 html {
     scroll-behavior: smooth;
@@ -121,7 +127,7 @@ p.title{
 .music{
     color: white;
     font-family: CenturyGothic;
-    text-align-last: center;
+    
 
 }
 
