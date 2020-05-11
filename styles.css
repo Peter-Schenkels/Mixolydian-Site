@@ -1,11 +1,13 @@
 .menu{
     text-align: center;
 }
-
+.parent{
+    height: 600px;
+    width: 100%;
+}
 .socialmedia{
     height: 90;
     width: 100%;
-    background-image: url(images/stars-transparent.png);
     margin: 140 0 0 0;
     text-align: center;
     position: -webkit-sticky; /* Safari */
@@ -92,7 +94,7 @@ p.title{
 
 
 .album{
-    margin: 100 0 250 0;
+    margin: 100 0 100 0;
     color: white;
     font-family: CenturyGothic;
     
@@ -102,7 +104,7 @@ p.title{
 
 .cover{
     float:right;
-    width: 20%;
+    width: 15%;
     margin-right: 40%;
     margin-left: 5%;
     image-rendering: high-quality;
@@ -110,8 +112,25 @@ p.title{
 
 .stars-decoration{
     height: 500px;
-    margin: 200px 0 0px 0;
+    margin: 200 0 0 0;
     background-size: cover;
     image-rendering: pixelated;
     background-image: url(images/stars-transparent.png);
+}
+
+.music{
+    color: white;
+    font-family: CenturyGothic;
+    text-align-last: center;
+
+}
+
+.about{
+    color: white;
+    font-family: CenturyGothic;
+    text-align-last: center;
+}
+
+footer{
+    margin: 300 0 0 0;
 }
