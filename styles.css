@@ -140,3 +140,23 @@ p.title{
 footer{
     margin: 300 0 0 0;
 }
+
+.software{
+    margin: 10% 100 10% 100;
+    text-align-last: center;
+}
+
+.software-box{
+    top: 0;
+    display: inline-block;
+    background-color: black;
+    width: 20%;
+    max-width: 400px;
+    margin: 50 50 50 50;
+}
+
+.software-about{
+    padding: 10 10 10 10;
+    font-family: CenturyGothic;
+    color: white;
+}
