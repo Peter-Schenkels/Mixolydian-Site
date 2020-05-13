@@ -161,3 +161,19 @@ footer{
     margin: 300 0 0 0;
 }
 
+.art{
+    margin: 5% 5% 5% 5%;
+    text-align-last: center;
+
+}
+
+.art-card{
+    margin: 30;
+    display: inline-block;
+    color: white;
+    font-family: CenturyGothic;
+    font-size: 20;
+}
+.art-image{
+    max-height: 225px;
+}
