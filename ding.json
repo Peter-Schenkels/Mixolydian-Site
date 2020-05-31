@@ -1,0 +1,40 @@
+{
+    "SeeDocsAt": "https://github.com/Microsoft/AirSim/blob/master/docs/settings.md",
+    "SettingsVersion": 1.2,
+    "SimMode": "Multirotor",
+    "ClockSpeed": 1,
+    "Vehicles": {
+        "Drone1": {
+            "VehicleType": "SimpleFlight",
+            "X": 8,
+            "Y": 4,
+            "Z": -2,
+            "DefaultSensors": {
+                "Lidar2": {
+                    "SensorType": 6,
+                    "Enabled": true,
+                    "NumberOfChannels": 4,
+                    "PointsPerSecond": 10000,
+                    "DrawDebugPoints": false,
+                    "Range": 1.5
+                }
+            },
+            "Drone2": {
+                "VehicleType": "SimpleFlight",
+                "X": 8,
+                "Y": 0,
+                "Z": -2,
+                "DefaultSensors": {
+                    "Lidar2": {
+                        "SensorType": 6,
+                        "Enabled": true,
+                        "NumberOfChannels": 4,
+                        "PointsPerSecond": 10000,
+                        "DrawDebugPoints": false,
+                        "Range": 1.5
+                    }
+                }
+            }
+        }
+    }
+}
