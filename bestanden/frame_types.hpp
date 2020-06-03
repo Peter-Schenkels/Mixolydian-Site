@@ -35,6 +35,7 @@ namespace r2d2 {
         MANUAL_CONTROL_SLIDER,
         MANUAL_CONTROL_JOYSTICK,
         MULTIROTOR_MANUAL_CONTROL,
+        MULTIROTOR_ROTATE
         MULTIROTOR_DESTINATION,
         MICROPHONE,
         MOVEMENT_CONTROL,
@@ -262,28 +263,37 @@ namespace r2d2 {
         char characters[243];
     };
 
-    enum class MultiRotorCommands : int8_t {
-        FORWARD,
-        SIDEWAYS,
-        UPWARD,
-        DESTINATION
-    };
-
     /** Struct to manually move the multirotor module. The motor 
      * moves relative from his orientation and position to the given 
-     * distance. The multirotor can also be rotated and the speed can be
+     * distance with a certain speed in m/s. 
      * set
      * 
      * MPLA wiki:
      * https://gitlab.com/r2d2-2020/modules/moving_platform_air
      */
+
     R2D2_PACK_STRUCT
-    struct frame_multirotor_manual_control {
+    struct frame_multirotor_manual_control_s {
     
-        MultiRotorCommands command;
-        uint8_t distance;
+        uint8_t forward;
+        uint8_t sideways;
+        uint8_t upwards;
         uint8_t speed;
-        uint16_t rotation; 
+
+    };
+
+    /** Struct to manually rotate the drone into a certain direction 
+     * with a given amount of degrees and speed in degrees/s
+     * 
+     * MPLA wiki:
+     * https://gitlab.com/r2d2-2020/modules/moving_platform_air
+     */
+    R2D2_PACK_STRUCT
+    struct frame_multirotor_rotate_s {
+    
+        int16_t degrees;
+        uint8_t speed;
+
     };
 
     /** Struct to move the multirotor to a given destination
@@ -294,7 +304,7 @@ namespace r2d2 {
      * https://gitlab.com/r2d2-2020/modules/moving_platform_air
      */
     R2D2_PACK_STRUCT
-    struct frame_multirotor_destination {
+    struct frame_multirotor_destination_s {
             
         int8_t x;
         int8_t y;
