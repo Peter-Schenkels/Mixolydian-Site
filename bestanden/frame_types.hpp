@@ -262,6 +262,12 @@ namespace r2d2 {
         char characters[243];
     };
 
+    enum class MultiRotorCommands : int8_t {
+        FORWARD,
+        SIDEWAYS,
+        UPWARD,
+        DESTINATION
+    };
 
     /** Struct to manually move the multirotor module. The motor 
      * moves relative from his orientation and position to the given 
