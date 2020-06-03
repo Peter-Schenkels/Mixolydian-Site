@@ -35,8 +35,11 @@ namespace r2d2 {
         MANUAL_CONTROL_SLIDER,
         MANUAL_CONTROL_JOYSTICK,
         MULTIROTOR_MANUAL_CONTROL,
-        MULTIROTOR_ROTATE
+        MULTIROTOR_ROTATE,
         MULTIROTOR_DESTINATION,
+        MULTIROTOR_POSITION,
+        MULTIROTOR_ORIENTATION,
+        MULTIROTOR_LIDAR_TOPDOWN,
         MICROPHONE,
         MOVEMENT_CONTROL,
         COORDINATE,
@@ -279,6 +282,7 @@ namespace r2d2 {
         uint8_t sideways;
         uint8_t upwards;
         uint8_t speed;
+        bool asynchronously;
 
     };
 
@@ -309,9 +313,50 @@ namespace r2d2 {
         int8_t x;
         int8_t y;
         int8_t z;
-        int speed;
+        uint8_t speed;
     };
 
+    /** Struct to store the multirotor's current LiDar vision
+     * from a topdown perspective
+     * 
+     * MPLA wiki:
+     * https://gitlab.com/r2d2-2020/modules/moving_platform_air
+     */
+    R2D2_PACK_STRUCT
+    struct frame_multirotor_lidar_topdown_s {
+            
+        int8_t lidar_top_down[8];
+
+    };
+
+    
+    /** Struct to store the multirotors current position
+     * 
+     * MPLA wiki:
+     * https://gitlab.com/r2d2-2020/modules/moving_platform_air
+     */
+    R2D2_PACK_STRUCT
+    struct frame_multirotor_position_s {
+            
+        int8_t x;
+        int8_t y;
+        int8_t z;
+
+    };
+
+    /** Struct to store the multirotors current orientation
+     * 
+     * MPLA wiki:
+     * https://gitlab.com/r2d2-2020/modules/moving_platform_air
+     */
+    R2D2_PACK_STRUCT
+    struct frame_multirotor_orientation_s {
+            
+        int16_t pitch;
+        int16_t yaw;
+        int16_t roll;
+
+    };
 
     /**
      * Struct to set a character on a display. This shows
