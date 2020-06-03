@@ -35,7 +35,7 @@ namespace r2d2 {
         MANUAL_CONTROL_SLIDER,
         MANUAL_CONTROL_JOYSTICK,
         MULTIROTOR_MANUAL_CONTROL,
-        MULTIROTOR_ROTATE,
+        MULTIROTOR_TURN,
         MULTIROTOR_DESTINATION,
         MULTIROTOR_POSITION,
         MULTIROTOR_ORIENTATION,
@@ -293,7 +293,7 @@ namespace r2d2 {
      * https://gitlab.com/r2d2-2020/modules/moving_platform_air
      */
     R2D2_PACK_STRUCT
-    struct frame_multirotor_rotate_s {
+    struct frame_multirotor_turn_s {
     
         int16_t degrees;
         uint8_t speed;
