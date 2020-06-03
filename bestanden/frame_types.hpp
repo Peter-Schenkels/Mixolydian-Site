@@ -272,14 +272,14 @@ namespace r2d2 {
      * https://gitlab.com/r2d2-2020/modules/moving_platform_air
      */
     R2D2_PACK_STRUCT
-    struct MultirotorAirsimManual {
+    struct frame_multirotor_manual_control {
     
         MultiRotorCommands command;
         uint8_t distance;
         uint8_t speed;
         uint16_t rotation; 
     };
-    
+
     /** Struct to move the multirotor to a given destination
      * The max field of operation is 255m x 255m the minimum amount
      * of change in meters is 1m.
@@ -288,7 +288,7 @@ namespace r2d2 {
      * https://gitlab.com/r2d2-2020/modules/moving_platform_air
      */
     R2D2_PACK_STRUCT
-    struct MultirotorAirsimDestination {
+    struct frame_multirotor_destination {
             
         int8_t x;
         int8_t y;
