@@ -99,6 +99,39 @@ body {
     src: url(fonts/centurygothic.ttf);
 }
 
+.double {
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    display: inline-flexbox;
+}
+
+.double-item {
+    margin: auto, 0;
+    padding: 3%;
+    font-family: CenturyGothic;
+    color: white;
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    margin: 5px 0
+}
+
+.double-item iframe {
+    size: auto;
+}
+
+.double-item :left {
+    justify-content: left;
+}
+
+.double-item :right {
+    text-align-last: left;
+}
+
 .title {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -147,6 +180,26 @@ p.title {
     background: linear-gradient(-45deg, #001aff38, #ff00f234);
     animation: gradient 2s ease infinite;
     background-size: 400% 400%;
+}
+
+.highlight-container {
+    padding: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50vh);
+    grid-auto-rows: max-content;
+    justify-content: center;
+}
+
+.highlight {
+    background: #020b5d26;
+    font-family: CenturyGothic;
+    color: white;
+    justify-content: center;
+}
+
+#left {
+    align-self: center;
+    padding: 10%;
 }
 
 .album-container {

@@ -52,9 +52,14 @@ img.rounded {
 .item {
     margin: auto, 0;
     padding: 3%;
-    height: 80%;
-    width: 40%;
-    max-width: 320px;
+}
+
+.item :left {
+    justify-content: left;
+}
+
+.item :right {
+    text-align-last: left;
 }
 
 .mugshot {
