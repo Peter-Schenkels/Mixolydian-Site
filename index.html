@@ -51,7 +51,15 @@
         </figure>
     </div>
     <div class="parent">
-        <div class="socialmedia">
+        <div class="stars-decoration">
+            <div class="about-me">
+                <h2>About me:</h2>
+                <h3>Hello and welcome to my website! My name is Peter Schenkels and I'm a Computer Science student at the HU University of Applied Sciences. I have experience working with project using C++, C# and Python. My latest contribution can be found
+                    at my University's professorship for Microsystems. I helped develop software for their Low Powered Sensor for measuring Earthquakes! In my free-time I produce music and work on games and other software related projects.
+                    </h2>
+            </div>
+        </div>
+        <section class="socialmedia">
             <a href="https://github.com/Peter-Schenkels">
                 <img class="icon" src="img/github.png">
             </a>
@@ -65,10 +73,104 @@
                 <img class="icon" src="img/bandcamp.png">
             </a>
 
-        </div>
-        <div class="stars-decoration"></div>
+
+
+        </section>
     </div>
 
+
+    </div>
+    <div class="software" id="software">
+        <div class="about">
+            <h1>
+                Software
+            </h1>
+            <p>
+                Games and other software I made.
+            </p>
+        </div>
+        <div class="software-container">
+            <div class="software-box">
+                <a href="https://github.com/Peter-Schenkels/Musical-3D-Printer">
+                    <img class="software-banner" src="images\musical-3d-printer-banner.png">
+                    <div class="software-about">
+                        <h1>Musical 3D Printer</h1>
+                        <p>A fun easy script that turns a midi file into a GCode file which a 3D printer can execute/play. currently only plays one note at the same time <br><br>"3D music" ~W. Visser
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box">
+                <a href="https://peterschenkels.itch.io/jinkel-delivery">
+                    <img class="software-banner" src="images\jinkel-delivery-banner.png">
+                    <div class="software-about">
+                        <h1>Jinkel Delivery</h1>
+                        <p>A fun arcadey 2D sidescroller game where you have to deliver pizzas on your scooter in a proceduraly generated world. This was a game I did for my minor game development in Finland. It was made using C# and Unity. All the assets
+                            and programming were done by me.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box">
+                <a href="https://github.com/Peter-Schenkels/KarkelLang---HU-ATP">
+                    <img class="software-banner" src="images\karkel-lang-banner.png">
+                    <div class="software-about">
+                        <h1>Karkel Lang</h1>
+                        <p>An interpreted and compiled programming language. This was a school assignment. We had to write our own programming language in a functional way using python. The language can be interpreted or compiled to arm assembly. More infor
+                            is available on my github.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box">
+                <a href="https://github.com/Peter-Schenkels/Geometry-Dash-Object-Detection">
+                    <img class="software-banner" src="images\geoemtry-dash-computer-vision.png">
+                    <div class="software-about">
+                        <h1>Geometry Dash Computer Vision</h1>
+                        <p>This was also a school project. The assignment was to solve a problem using computer vision. I wrote a script that could detect obstacles and platforms in the game: Geometry Dash, using classical computer vision.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box">
+                <a href="https://github.com/Peter-Schenkels/Twits-Desktop">
+                    <img class="software-banner" src="images\twitch-software-banner.png">
+                    <div class="software-about">
+                        <h1>Twits Desktop</h1>
+                        <p>A desktop app replacing the discontinued twitch desktop app. It currently supports streaming your favorite streamers and live notifications. Made in C# and WPF.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box" id="Soap">
+                <a href="https://github.com/Peter-Schenkels/Soap-Messenger">
+                    <img class="software-banner" src="img/soappreview.png">
+                    <div class="software-about">
+                        <h1>Soap</h1>
+                        <p>A small messenger client/server for talking with friends over the internet. I learnt alot about c# and sockets while making this project. This messenger has basic features like sending messages, sending images, setting your own
+                            username, profile picture and color. More features like sending different files are coming up!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box" id="lasertag">
+                <a href="https://github.com/bgeer/lasertag">
+                    <img class="software-banner" src="img/lasertag.jpg">
+                    <div class="software-about">
+                        <h1>Lasertag</h1>
+                        <p>A school project were we had to develop a lasertag game from scratch using C++ and arduino Dues. My contributions to this project were the implementations of the Infra Red receiver & sender.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="software-box" id="Port-Forward">
+                <a href="https://github.com/Peter-Schenkels/Portforward-Game-Project">
+                    <img class="software-banner" src="img/portal.gif" style="max-width: 100%;">
+                    <div class="software-about">
+                        <h1>Port-Forward</h1>
+                        <p>Another school project were we had to develop a game using c++ and sfml. We went for a 2d portal clone with a twist where you could shift between dimensions to solve the puzzles with your portal gun. I was in charge of resource
+                            management, the level editor, basic physics and other inner game engine workings. I also created most of the sprites.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
     <div class="music" id="music">
         <div class="about">
             <h1>
@@ -78,34 +180,40 @@
                 Music I produced the last couple of years.
             </p>
         </div>
-
-
         <div class="album-container">
-            <div class="album" id="High Tide">
-                <iframe class="cover bandcamp-widget" src="https://bandcamp.com/EmbeddedPlayer/album=1520627161/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ex-lyd.bandcamp.com/album/high-tide">High Tide by EX-LYD</a></iframe>
+
+            <div class="album bandcamp-widget">
+                <iframe class="cover" src="https://bandcamp.com/EmbeddedPlayer/album=3862472988/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ex-lyd.bandcamp.com/album/sky-world-moony-moon-extended-version">Sky World / Moony Moon (Extended Version) by EX-LYD</a></iframe>
+                <div class="album-details">
+                    <h2 style="display: inline;">Sky World / Moony Moon (Extended Version) </h2>
+                    <p>This single includes extended/revamped versions of Sky World and Moony moon from my album: "Space". Since the tracks were so short and have such interesting ideas I thought it would be cool to make them longer and introduce new ideas.
+                        Hope you'ill enjoy it!
+                    </p>
+                </div>
+            </div>
+            <div class="album bandcamp-widget">
+                <iframe class="cover" src="https://bandcamp.com/EmbeddedPlayer/album=1520627161/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ex-lyd.bandcamp.com/album/high-tide">High Tide by EX-LYD</a></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">High Tide</h2>
                     <p>High Tide is my most recent release under "EX-LYD". This album takes you on a underwater bitpop adventure with some ambient tracks to.</p>
                 </div>
             </div>
 
-
-
-            <div class="album bandcamp-widget" id="Chip Heat">
+            <div class="album bandcamp-widget">
                 <iframe class="cover" src="https://bandcamp.com/EmbeddedPlayer/album=3073557759/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ex-lyd.bandcamp.com/album/chip-heat">Chip Heat by EX-LYD</a></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">Chip Heat</h2>
                     <p>This is the second album released under EX-LYD called chipheat. It also contains alot of bitpop/chiptune songs now with more influences drawn from japanese electronic music</p>
                 </div>
             </div>
-            <div class="album bandcamp-widget" id="Space">
+            <div class="album bandcamp-widget">
                 <iframe class="cover" src="https://bandcamp.com/EmbeddedPlayer/album=5945476/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://ex-lyd.bandcamp.com/album/space">Space by EX-LYD</a></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">Space</h2>
                     <p>This was my debut album "Space" under the name: "EX-LYD". I mainly produce bitpop combined with other EDM genres under this name. This release was made under the record label called "CheapBeats". </p>
                 </div>
             </div>
-            <div class="album soundcloud-widget" id="Crazy">
+            <div class="album soundcloud-widget">
                 <a href="https://soundcloud.com/poosacky/sets/crazy">
                     <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/521261559&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 </a>
@@ -115,35 +223,35 @@
                 </div>
             </div>
 
-            <div class="album soundcloud-widget" id="Android Funk">
+            <div class="album soundcloud-widget">
                 <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/460938369&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">Android Funk</h2>
                     <p>Fast paced BitPop single </p>
                 </div>
             </div>
-            <div class="album soundcloud-widget" id="House of Usher">
+            <div class="album soundcloud-widget">
                 <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/472918407&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">House of Usher</h2>
                     <p>A Symphonic Drum & Bass single based on The Fall of the House of Usher by Edgar Allan Poe</p>
                 </div>
             </div>
-            <div class="album soundcloud-widget" id="Don't Cry">
+            <div class="album soundcloud-widget">
                 <div class="album-details">
                     <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/408443550&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                     <h2 style="display: inline;">Don't Cry</h2>
                     <p>A melodic Drum & Bass single</p>
                 </div>
             </div>
-            <div class="album soundcloud-widget" id="Exitium">
+            <div class="album soundcloud-widget">
                 <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/357893054&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">Exitium</h2>
                     <p>An aggressive hybrid Drum & Bass track. </p>
                 </div>
             </div>
-            <div class="album soundcloud-widget" id="The Subside">
+            <div class="album soundcloud-widget">
                 <iframe class="cover" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/336039054&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                 <div class="album-details">
                     <h2 style="display: inline;">The Subside</h2>
@@ -152,45 +260,6 @@
             </div>
         </div>
         <div class="stars-decoration"></div>
-        <div class="software" id="software">
-            <div class="about">
-                <h1>
-                    Software
-                </h1>
-                <p>
-                    Games and other software I made.
-                </p>
-            </div>
-            <div class="software-box" id="lasertag">
-                <a href="https://github.com/bgeer/lasertag">
-                    <img src="img/lasertag.jpg" style="max-width: 100%;">
-                </a>
-                <div class="software-about">
-                    <h1>Lasertag</h1>
-                    <p>A school project were we had to develop a lasertag game from scratch using the infrared protocol. My contributions to this project are the implementations of the IR receiver & sender.</p>
-                </div>
-            </div>
-            <div class="software-box" id="Port-Forward">
-                <a href="https://github.com/Peter-Schenkels/Portforward-Game-Project">
-                    <img src="img/portal.gif" style="max-width: 100%;">
-                </a>
-                <div class="software-about">
-                    <h1>Port-Forward</h1>
-                    <p style="font-size: 11.5;">Another school project were we had to develop a game in sfml using c++. We went for a 2d portal clone with a twist were you could shift between dimensions to solve the puzzles with your portal gun. I was in charge of all of the resource
-                        management, level editor, basic physics and other inner game engine workings. I also designed and created most of the sprites.</p>
-                </div>
-            </div>
-            <div class="software-box" id="Soap">
-                <a href="https://github.com/Peter-Schenkels/Soap-Messenger">
-                    <img src="img/soappreview.png" style="max-width: 100%;">
-                </a>
-                <div class="software-about">
-                    <h1>Soap</h1>
-                    <p style="font-size: 11.5;">A small messenger client/server for talking with friends over the internet. This leans more towards the passion project side. I learnt alot about c# and sockets while making this project. This messenger has basic features like sending
-                        messages, sending images, setting your own username, profile picture and color. More features like sending different files are comming up!</p>
-                </div>
-            </div>
-        </div>
     </div>
     <footer>
         <h3>© Copyright 2020 Peter Schenkels - All Rights Reserved</h3>

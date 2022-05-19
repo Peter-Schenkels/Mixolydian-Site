@@ -3,18 +3,8 @@
 }
 
 .parent {
-    height: 600px;
+    height: 50vh;
     width: 100%;
-}
-
-.socialmedia {
-    height: 90;
-    width: 100%;
-    margin: 140 0 0 0;
-    text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
 
 a {
@@ -34,7 +24,6 @@ h2 {
 }
 
 h1 {
-    text-align-last: center;
     color: white;
     font-family: CenturyGothic;
 }
@@ -57,6 +46,22 @@ h1 {
     margin: 10 10 10 10;
 }
 
+.socialmedia {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    position: sticky;
+    top: 1vh;
+}
+
+.stars-decoration {
+    background-size: cover;
+    image-rendering: pixelated;
+    background-image: url(images/stars-transparent.png);
+    left: 50%;
+    height: auto;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -74,17 +79,13 @@ body {
 }
 
 .software {
-    margin: 10% 100 10% 100;
-    text-align-last: center;
+    margin: 1% 100 10% 100;
 }
 
-.software-box {
-    top: 0;
-    display: inline-block;
-    background-color: black;
-    width: 20%;
-    max-width: 400px;
-    margin: 50 50 50 50;
+.about-me {
+    text-align: left;
+    margin: auto;
+    max-width: 700px;
 }
 
 .software-about {
@@ -119,42 +120,96 @@ p.title {
     margin: 0 0 50 0;
 }
 
-.album-container {
+.software-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 40vh);
     grid-auto-rows: max-content;
-    gap: 2vh;
+    gap: 6vh;
     margin: 3vh;
     justify-content: center;
 }
 
-.album {
-    outline: 5px dashed rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 1vh;
+.software-box {
+    background: linear-gradient(-45deg, #ff00001a, #00263f81);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
     color: white;
     font-family: CenturyGothic;
     max-height: 60vh;
     font-size: 1vw;
 }
 
+.software-box a {
+    display: block;
+    height: 100%;
+}
+
+.software-box:hover {
+    background: linear-gradient(-45deg, #001aff38, #ff00f234);
+    animation: gradient 2s ease infinite;
+    background-size: 400% 400%;
+}
+
+.album-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40vh);
+    grid-auto-rows: max-content;
+    gap: 6vh;
+    justify-content: center;
+}
+
+.album {
+    background: linear-gradient(-45deg, #33ff001a, #490d4652);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+    padding: 1vh;
+    color: white;
+    font-family: CenturyGothic;
+    max-height: 90vh;
+    font-size: 1vw;
+}
+
+.album:hover {
+    background: linear-gradient(-45deg, rgba(0, 255, 157, 0.22), #650d6d52);
+    animation: gradient 2s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .album-details {
     margin: auto;
 }
 
+.album-details h2 {
+    text-align-last: center;
+    color: white;
+    font-family: CenturyGothic;
+}
+
 .cover {
+    object-fit: cover;
     width: 35vh;
     height: 35vh;
     display: block;
     margin: auto;
 }
 
-.stars-decoration {
-    height: 500px;
-    margin: 200 0 0 0;
-    background-size: cover;
-    image-rendering: pixelated;
-    background-image: url(images/stars-transparent.png);
+.software-banner {
+    object-fit: cover;
+    width: 100%;
+    height: 30%;
+    display: block;
 }
 
 .music {
