@@ -136,7 +136,6 @@ p.title {
     color: white;
     font-family: CenturyGothic;
     max-height: 60vh;
-    font-size: 1vw;
 }
 
 .software-box a {
@@ -166,7 +165,6 @@ p.title {
     color: white;
     font-family: CenturyGothic;
     max-height: 90vh;
-    font-size: 1vw;
 }
 
 .album:hover {
