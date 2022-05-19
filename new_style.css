@@ -9,10 +9,10 @@ body {
 
 img.rounded {
     border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
     height: 100%;
     margin: auto;
     display: block;
-    border: 5px solid rgb(255, 255, 255);
     filter: blur(0px);
 }
 

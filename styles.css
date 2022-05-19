@@ -1,41 +1,45 @@
-.menu{
+.menu {
     text-align: center;
 }
-.parent{
+
+.parent {
     height: 600px;
     width: 100%;
 }
-.socialmedia{
+
+.socialmedia {
     height: 90;
     width: 100%;
     margin: 140 0 0 0;
     text-align: center;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-h3{
-    text-align-last: center; 
-    color: white; 
+h3 {
+    text-align-last: center;
+    color: white;
     font-family: CenturyGothic;
 }
-h2{
-    text-align-last: center; 
-    color: white; 
+
+h2 {
+    text-align-last: center;
+    color: white;
     font-family: CenturyGothic;
 }
-h1{
-    text-align-last: center; 
-    color: white; 
+
+h1 {
+    text-align-last: center;
+    color: white;
     font-family: CenturyGothic;
 }
-.item{
+
+.item {
     color: white;
     font-family: CenturyGothic;
     font-size: 20;
@@ -44,38 +48,37 @@ h1{
     width: 248px
 }
 
-.icon{
+.icon {
     text-align: center;
     display: inline-block;
     image-rendering: auto;
     width: 65px;
     filter: invert(100%);
     margin: 10 10 10 10;
-    
 }
+
 html {
     scroll-behavior: smooth;
-  }
-.image{
+}
+
+.image {
     cursor: pointer;
     width: 90%;
 }
 
-
-body{
+body {
     image-rendering: pixelated;
     background-image: url(img/stars.png);
     background-size: cover;
     background-attachment: fixed;
-
 }
 
-.software{
+.software {
     margin: 10% 100 10% 100;
     text-align-last: center;
 }
 
-.software-box{
+.software-box {
     top: 0;
     display: inline-block;
     background-color: black;
@@ -84,33 +87,31 @@ body{
     margin: 50 50 50 50;
 }
 
-.software-about{
+.software-about {
     padding: 10 10 10 10;
     font-family: CenturyGothic;
     color: white;
 }
 
 @font-face {
-    font-family:CenturyGothic;
+    font-family: CenturyGothic;
     src: url(fonts/centurygothic.ttf);
-  }
+}
 
-  .title{
-      margin-top: 100px;
-      margin-bottom: 100px;
+.title {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
-  }
-
-
-h1.title{
+h1.title {
     color: white;
     font-family: CenturyGothic;
     text-align-last: center;
     font-size: 30;
     margin: 0 0 0 0;
-
 }
-p.title{
+
+p.title {
     color: white;
     font-family: CenturyGothic;
     text-align-last: center;
@@ -118,25 +119,37 @@ p.title{
     margin: 0 0 50 0;
 }
 
+.album-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40vh);
+    grid-auto-rows: max-content;
+    gap: 2vh;
+    margin: 3vh;
+    justify-content: center;
+}
 
-.album{
-    margin: 100 0 100 0;
+.album {
+    outline: 5px dashed rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1vh;
     color: white;
     font-family: CenturyGothic;
-    
-    margin-left: 25%;
-
+    max-height: 60vh;
+    font-size: 1vw;
 }
 
-.cover{
-    float:right;
-    width: 15%;
-    margin-right: 40%;
-    margin-left: 5%;
-    image-rendering: high-quality;
+.album-details {
+    margin: auto;
 }
 
-.stars-decoration{
+.cover {
+    width: 35vh;
+    height: 35vh;
+    display: block;
+    margin: auto;
+}
+
+.stars-decoration {
     height: 500px;
     margin: 200 0 0 0;
     background-size: cover;
@@ -144,36 +157,34 @@ p.title{
     background-image: url(images/stars-transparent.png);
 }
 
-.music{
+.music {
     color: white;
     font-family: CenturyGothic;
-    
-
 }
 
-.about{
+.about {
     color: white;
     font-family: CenturyGothic;
     text-align-last: center;
 }
 
-footer{
+footer {
     margin: 300 0 0 0;
 }
 
-.art{
+.art {
     margin: 5% 5% 5% 5%;
     text-align-last: center;
-
 }
 
-.art-card{
+.art-card {
     margin: 30;
     display: inline-block;
     color: white;
     font-family: CenturyGothic;
     font-size: 20;
 }
-.art-image{
+
+.art-image {
     max-height: 225px;
 }
