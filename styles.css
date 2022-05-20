@@ -153,6 +153,41 @@ p.title {
     margin: 0 0 50 0;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.arrow {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    background-color: var(--gray);
+    transition: opacity 0.1s;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
 .software-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 40vh);
@@ -185,7 +220,7 @@ p.title {
 .highlight-container {
     padding: 10vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 50vh);
+    grid-template-columns: repeat(auto-fit, 45vh);
     grid-auto-rows: max-content;
     justify-content: center;
 }
