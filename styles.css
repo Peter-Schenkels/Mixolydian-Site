@@ -23,6 +23,12 @@ h2 {
     font-family: CenturyGothic;
 }
 
+p {
+    text-align-last: left;
+    color: white;
+    font-family: CenturyGothic;
+}
+
 h1 {
     color: white;
     font-family: CenturyGothic;
@@ -43,7 +49,7 @@ h1 {
     image-rendering: auto;
     width: 65px;
     filter: invert(100%);
-    margin: 10 10 10 10;
+    margin: 20px;
 }
 
 .socialmedia {
@@ -66,6 +72,102 @@ html {
     scroll-behavior: smooth;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about:nth-child(0) {
+    animation-delay: 0.2s;
+}
+
+.about:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.about:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.about:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.about:nth-child(4) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    height: 70px;
+    margin-right: 10px;
+}
+
+.arrowe {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #fff;
+    margin: 30px
+}
+
+.about p {
+    margin: 0;
+}
+
+.about img {
+    display: block;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.about p {
+    margin: 0;
+}
+
+.about img {
+    display: block;
+}
+
 .image {
     cursor: pointer;
     width: 90%;
@@ -76,10 +178,23 @@ body {
     background-image: url(img/stars.png);
     background-size: cover;
     background-attachment: fixed;
+    background-position: 50% 0;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-position: 50% 50%;
+    }
+}
+
+.center-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .software {
-    margin: 1% 100 10% 100;
+    margin: 1% 100 1% 100;
 }
 
 .about-me {
@@ -97,39 +212,6 @@ body {
 @font-face {
     font-family: CenturyGothic;
     src: url(fonts/centurygothic.ttf);
-}
-
-.double {
-    height: auto;
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    display: inline-flexbox;
-}
-
-.double-item {
-    margin: auto, 0;
-    padding: 3%;
-    font-family: CenturyGothic;
-    color: white;
-    position: relative;
-    right: auto;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    margin: 5px 0
-}
-
-.double-item iframe {
-    size: auto;
-}
-
-.double-item :left {
-    justify-content: left;
-}
-
-.double-item :right {
-    text-align-last: left;
 }
 
 .title {
@@ -161,6 +243,7 @@ a {
 .arrow {
     text-align: center;
     margin: auto;
+    margin-top: 30px;
     width: 50%;
     background-color: var(--gray);
     transition: opacity 0.1s;
@@ -197,6 +280,38 @@ a {
     justify-content: center;
 }
 
+.highlight-container {
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highlight-box {
+    background: linear-gradient(-45deg, #ff00003d, #005a957e);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+    margin: 10vh;
+    color: white;
+    font-family: CenturyGothic;
+    max-height: 60vh;
+    max-width: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3%;
+}
+
+.highlight-box iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.software-about {
+    padding: 20px;
+    text-align: left;
+}
+
 .software-box {
     background: linear-gradient(-45deg, #ff00001a, #00263f81);
     animation: gradient 5s ease infinite;
@@ -211,29 +326,43 @@ a {
     height: 100%;
 }
 
+.software-box p {
+    font-size: 13px;
+    /* Set the desired font size */
+}
+
 .software-box:hover {
     background: linear-gradient(-45deg, #001aff38, #ff00f234);
     animation: gradient 2s ease infinite;
     background-size: 400% 400%;
 }
 
-.highlight-container {
-    padding: 10vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 45vh);
-    grid-auto-rows: max-content;
-    justify-content: center;
-}
-
 .highlight {
-    background: #020b5d26;
+    background: #001aff26;
     font-family: CenturyGothic;
     color: white;
     justify-content: center;
+    margin: 10px;
+    height: 1vh;
+}
+
+.highlight-container {
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #left {
     align-self: center;
+    padding: 10%;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10%;
 }
 
