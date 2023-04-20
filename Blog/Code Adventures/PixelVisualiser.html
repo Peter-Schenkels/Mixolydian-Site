@@ -1,0 +1,150 @@
+<!DOCTYPE html5>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <title>
+        Mixolydian - Blog Pixel Visualiser - 1
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <meta charset="UTF-8">
+
+
+    <link href="../../prism.css" rel="stylesheet" />
+    <script src="../../prism.js"></script>
+</head>
+
+<body>
+    <!-- Blog Post 2 -->
+    <div id="002">
+        <div class="center-me">
+            <h1>Pixel Visualiser - post 002</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#002">Next</a>
+                    <a href="#001">Previous</a>
+                    <a href="#001">First</a>
+                    <a href="#002">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="software-about">
+                    <h2>Pixel Visualiser - Setting up CMake</h2>
+                    <p>In this post, I'll explain the steps I undertook to setup a work enviroment for Pixel Visualiser and what I hope to achieve. I work at Ronimo Games, where we use Jira to keep track of tasks and bugs (if you're not familiar with Jira,
+                        it's a project management tool). For this project, I decided to keep track of everything myself, not just because it's useful for keeping your tasks ordened, but also because it's a great tool fool setting up a design document.</p>
+                    <p>So, the project started with creating a Jira board. Now, how did I setup the work enviroment.</p>
+                    <ul>
+                        <li>
+                            <h4>CMake Configuration</h4>
+                            <p>My first user story is to create a CMake file that can generate all the projects I want to make with Pixel Visualiser. I need to create a CMake macro that allows me to easily add header and source files, and automatically includes
+                                the correct libraries and DLLs.</p>
+                            <p>The project will consist of a static library that contains the interface and several example projects. So, the macro should allow me to specify whether something is an executable or a static library. It should also include
+                                the specified sources in the build process and link the correct libraries. In this case, the libraries are GLUT.</p>
+                        </li>
+                        <li>
+                            <h4>Visual Studio</h4>
+                            <p>I started by creating the folder structure, and then made sure that I could specify which sources to include in a function. I also made it possible for users to create different source groups, which appear in Visual Studio
+                                (this is a functionality that CMake offers, which is very handy). In the macro, I specified how the source groups are linked to a static library or an executable. Everything was going smoothly until I ran into a wall -
+                                including external libraries. Normally, this should be easy to do with CMake, as long as your setup is correct.</p>
+                            <img src="img/2/folderstructure.png" class="img-block">
+                            <span>Top folder structure of the project</span>
+                            <pre><code class="language-cmake">
+cmake_minimum_required(VERSION 3.16)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+project(Pixel-Visualiser VERSION 0.0.1)
+
+include(CMake/Macros.cmake)
+
+add_subdirectory(Pixel-Visualiser)
+add_subdirectory(Examples)
+                                    </code></pre>
+                            <span>Main CMake file, including the macros cmake and adding any additional subdirectories like, examples and the library</span>
+                        </li>
+                        <li>
+                            <h4>Integrating FreeGLUT with CMake</h4>
+                            <p>As I mentioned earlier, for some reason, it was difficult for me to include GLUT in my CMake setup. Simply including GLUT after installing the vcpk package didn't work. So, I ended up downloading the freeglut project and building
+                                it myself. I decided to use freeglut instead of GLUT because GLUT is closed source and hasn't been updated by its makers for a long time.</p>
+                            <p>After building the freeglut project, I had all the necessary files and just had to include the DLLs from the freeglut project in my project.</p>
+                            <p>To fully integrate CMake, I assigned several options to the user. This included defining the location of the freeglut includes and binaries. Copying the binaries to the correct release folder was a priority, as they are needed
+                                at runtime for the executables.</p>
+                            <p>In Visual Studio, you can specify what kind of release your project builds. In this case, I had two types of releases - a Debug Release, which compiles the project in debuggable mode, and a normal release, which compiles the
+                                project with the highest optimization. But this also means that the freeglut binaries need to be compiled in the same way, so they can work together. To achieve this, CMake needs to know what kind of release mode your project
+                                is being compiled in.</p>
+                            <p>I learned to use <strong>generator expressions</strong> for this purpose. They allow me to determine what configuration the CMake project is being built in, and with this information, I can copy the binaries from the correct
+                                folder to the correct location.</p>
+                            <pre><code class="language-c">
+include(${FREEGLUT_CMAKE_DIR}/FreeGLUTConfig.cmake)
+include_directories(${FREEGLUT_INCLUDE_DIR})
+
+# Specify the source and destination directories for the DLL files
+set(SOURCE_DLL_DIR "${FREEGLUT_DIR}/bin/$<"CONFIGURATION">")
+set(DEST_DLL_DIR "${CMAKE_CURRENT_BINARY_DIR}/$<"CONFIGURATION">")
+
+# copy freeglut.dll to specified build configuration target
+add_custom_command(TARGET ${target} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${FREEGLUT_DIR}/bin/$<"CONFIGURATION">/
+        freeglut$<$<"CONFIG:Debug">:d>.dll"$<"TARGET_FILE_DIR:${target}">)
+
+target_include_directories(${target} PRIVATE ${FREEGLUT_INCLUDE_DIR})
+                                    </code></pre>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Post 1 -->
+    <div id="001">
+        <div class="center-me">
+            <h1>Pixel Visualiser - post 001</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#002">Next</a>
+                    <a href="#001">First</a>
+                    <a href="#002">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="software-about">
+                    <h2>Welcome to my blog!</h2>
+                    <p><em>Posted on 19-4-2023 at 20:48</em></p>
+                    <p>In this blog, I will be documenting my progress on a project called Pixel Visualiser.</p>
+                    <p>The goal of this project is two-fold. First, I want to create a program that can easily draw pixels on the screen, allowing me to create math visualizations or other cool programs that require visualizing data without the use of sprites.
+                        Second, I want to learn more about Open GL and how to write shaders. I hope that by working on this project, I can achieve both goals.</p>
+                    <p>To accomplish this, I plan to use <span class="emphasis">GLUT (OpenGL Utility Toolkit)</span> and explore Open GL. I may also write shaders for certain operations. Throughout this blog, you'll see my learning process as I develop this
+                        program. I hope you have fun following along!</p>
+                    <p>All of my work will be available on GitHub, so feel free to check it out. Let's get started on this exciting journey of learning and creating!</p>
+                    <a href="https://github.com/Peter-Schenkels/Pixel-Visualiser">Github Link to Pixel Visualiser</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>© Copyright 2023 Peter Schenkels - All Rights Reserved</h3>
+    </footer>
+</body>
+
+</html>
