@@ -301,7 +301,6 @@ a {
     max-width: 100vh;
     display: flex;
     align-items: center;
-    border-radius: 5px;
 }
 
 
@@ -363,12 +362,9 @@ a {
     justify-content: center;
     align-items: center;
     padding-bottom: 3%;
-    border-radius: 1vh;
 }
 
 .highlight-box iframe {
-    border-top-left-radius: 1vh;
-    border-top-right-radius: 1vh;
     width: 100%;
     height: 100%;
 }
@@ -385,9 +381,6 @@ a {
     color: white;
     font-family: CenturyGothic;
     max-height: 60vh;
-    border-radius: 1vh;
-    border-top-left-radius: 1vh;
-    border-top-right-radius: 1vh;
 }
 
 .software-box a {
@@ -451,7 +444,6 @@ a {
     color: white;
     font-family: CenturyGothic;
     max-height: 90vh;
-    border-radius: 1vh;
 }
 
 .album:hover {
@@ -491,8 +483,6 @@ a {
 }
 
 .software-banner {
-    border-top-left-radius: 1vh;
-    border-top-right-radius: 1vh;
     object-fit: cover;
     width: 100%;
     height: 30%;
