@@ -23,6 +23,143 @@
 
 <body>
     <!-- Blog Post 2 -->
+    <div id="003">
+        <div class="center-me">
+            <h1>Pixel Visualiser - post 003</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#003">Next</a>
+                    <a href="#002">Previous</a>
+                    <a href="#001">First</a>
+                    <a href="#003">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="software-about">
+                    <h2>Pixel Visualiser - Creating the pixel drawing interface basis</h2>
+                    <p>So, what's the deal? Over the past couple of months, I've been working on this project, making updates here and there. I set up a Jira board with stories and tasks to keep track of my progress. One of the main stories I tackled first
+                        was developing a simple drawing interface: the ability to draw pixels onto a buffer with a specified pixel size.</p>
+                    <ul>
+                        <li>
+                            <h4>Simple Drawing Interface version 0.00001</h4>
+                            <p>I successfully achieved this! I used GLUT for window management and drawing, although I found its interface to be quite outdated. I wanted a more intuitive and efficient way to draw pixels on the screen quickly.</p>
+                            <p>My initial goal was to draw pixels onto a buffer with a set pixel size. To accomplish this, I started by defining a pixel structure. This structure holds all the necessary data for now.</p>
+
+                            <pre><code class="language-cpp">
+struct Pixel
+{
+    Color color = {1,1,1};
+    Vector2<int> position = {0,0};
+
+    Pixel(const Color color, const Vector2<int> position):
+        color(color),
+        position(position)
+    {
+    }
+};
+                            </code></pre>
+                            <p>
+                                Next, I focused on defining the buffer. The buffer can hold pixel values and can vary in size from the entire screen to just 1x1 pixels. I wanted the buffer to act as a render window while allowing for the adjustment of properties like position on the
+                                screen and pixel size. These properties could potentially be used for interesting parallax effects if this project evolves into a game engine.
+                            </p>
+                            <pre><code class="language-cpp">
+class Buffer
+{
+    int id;
+    Vector2<int> size = Vector2(0, 0);
+    Vector2<int> position = Vector2(0, 0);
+    Vector2<float> pixelSize = Vector2(0.f, 0.f);
+
+    std::vector<Pixel>& buffer;
+
+public:
+    Buffer(const Vector2<int> size, const Vector2<float> pixelSize, const Vector2<int> position, const int id) :
+        id(id),
+        size(size),
+        position(position),
+        pixelSize(pixelSize),
+        buffer(*new std::vector<Pixel>())
+    {
+    }
+
+    void clear() const;
+    void drawPixel(Pixel pixel) const;
+
+    // Set position (based on buffer pixel size) of the buffer in the window
+    void setPosition(const Vector2<int> pos) { position = pos; }
+
+    [[nodiscard]] int getId() const { return id; }
+    [[nodiscard]] std::vector<Pixel>& getPixels() const { return buffer; }
+    [[nodiscard]] Vector2<float> getPixelSize() const { return pixelSize; }
+    [[nodiscard]] Vector2<int> getPosition() const { return position; }
+};
+                            </code></pre>
+                        </li>
+                        <li>
+                            <h4>GLUT Adventures</h4>
+                            <p>With the buffer in place, I proceeded to develop the main interface for the pixel visualizer. Integrating it smoothly with GLUT required some research. GLUT operates on a callback-based system, meaning that as a user, I can
+                                specify a few static functions and pass them as parameters to GLUT using function pointers. Here 's an example.</p>
+                            <pre><code class="language-cpp">
+// Set mouse callback
+glutMouseFunc(Input::Mouse::handleMouseEvents);
+glutPassiveMotionFunc(Input::Mouse::handlePassiveMouseEvents);
+glutKeyboardFunc(Input::Keyboard::handleKeyboardDownEvents);
+glutKeyboardUpFunc(Input::Keyboard::handleKeyboardUpEvents);
+Input::Keyboard::updateKeyboardEvents();
+                            </code></pre>
+                            <h4>
+                                Supporting Multiple Windows in GLUT
+                            </h4>
+                            <p>
+                                Since I wanted to support multiple windows, I faced a challenge in making this work with GLUT. GLUT uses the same callback for multiple windows, so finding a solution was tricky. After initializing each window, I discovered that I could specify a display
+                                callback function for each window. Initially, I thought of adding a display function to the window class and passing it as a function pointer. However, I encountered a limitation with function pointers in C++. They do not
+                                allow passing class instances as parameters because the function also needs to modify the class instance under the hood. This violates the rule of the types of functions I can pass as parameters, as this specific function
+                                must not have any parameters themselve.
+                            </p>
+                            <h4>
+                                Drawing Pixels from the Buffer:
+                            </h4>
+                            <p>
+                                To draw pixels from the buffer, I implemented a simple but inefficient method for now: drawing a square made up of two triangles for each pixel in the buffer. However, I plan to explore better ways to accomplish this in the future, such as modifying a
+                                texture buffer.
+                            </p>
+                            <pre><code class="language-cpp">
+void PV::PixelVisualiser::drawPixel(const Vector2<float>& pixelSize, const Pixel& pixel)
+{
+    glBegin(GL_TRIANGLES);
+    glColor3f(pixel.color.r(), pixel.color.g(), pixel.color.b());
+    glVertex2i(pixel.position.x * pixelSize.x, pixel.position.y * pixelSize.y);
+    glVertex2i((pixel.position.x + 1) * pixelSize.x, pixel.position.y * pixelSize.y);
+    glVertex2i(pixel.position.x * pixelSize.x, (pixel.position.y + 1) * pixelSize.y);
+    glColor3f(pixel.color.r(), pixel.color.g(), pixel.color.b());
+    glVertex2i(pixel.position.x * pixelSize.x, (pixel.position.y + 1) * pixelSize.y);
+    glVertex2i((pixel.position.x + 1) * pixelSize.x, pixel.position.y * pixelSize.y);
+    glVertex2i((pixel.position.x + 1) * pixelSize.x, (pixel.position.y + 1) * pixelSize.y);
+    glEnd();
+}
+                            </code></pre>
+                        </li>
+                        <li>
+                            <h4>
+                                Conclusion
+                            </h4>
+                            <p>
+                                At this point, I can successfully draw pixels on the screen using the implemented functionality.This concludes the update for now. In the next update, I will discuss input detection and event handling.
+                            </p>
+                            <img src="https://github.com/Peter-Schenkels/Pixel-Visualiser/blob/main/Examples/Colored%20Squares/squares.gif?raw=true" style="max-width:600px;width:100%">
+                            <p>Small example made using this interface</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Post 2 -->
     <div id="002">
         <div class="center-me">
             <h1>Pixel Visualiser - post 002</h1>
@@ -33,7 +170,7 @@
                     <a href="#002">Next</a>
                     <a href="#001">Previous</a>
                     <a href="#001">First</a>
-                    <a href="#002">Top</a>
+                    <a href="#003">Top</a>
                 </div>
             </div>
         </div>
@@ -41,8 +178,8 @@
             <div class="generic-box">
                 <div class="software-about">
                     <h2>Pixel Visualiser - Setting up CMake</h2>
-                    <p>In this post, I'll explain the steps I undertook to setup a work enviroment for Pixel Visualiser and what I hope to achieve. I work at Ronimo Games, where we use Jira to keep track of tasks and bugs (if you're not familiar with Jira,
-                        it's a project management tool). For this project, I decided to keep track of everything myself, not just because it's useful for keeping your tasks ordened, but also because it's a great tool fool setting up a design document.</p>
+                    <p>In this post, I'll explain the steps I undertook to setup a work enviroment for Pixel Visualiser and what I hope to achieve. I work at Ronimo Games, where we use Jira to keep track of tasks and bugs (if you 're not familiar with Jira,
+                        it's a project management tool). For this project, I decided to keep track of everything myself, not just because it 's useful for keeping your tasks ordened, but also because it's a great tool fool setting up a design document.</p>
                     <p>So, the project started with creating a Jira board. Now, how did I setup the work enviroment.</p>
                     <ul>
                         <li>
@@ -120,7 +257,7 @@ target_include_directories(${target} PRIVATE ${FREEGLUT_INCLUDE_DIR})
                 <div class="button-container">
                     <a href="#002">Next</a>
                     <a href="#001">First</a>
-                    <a href="#002">Top</a>
+                    <a href="#003">Top</a>
                 </div>
             </div>
         </div>
