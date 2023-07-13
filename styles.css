@@ -213,6 +213,12 @@ body {
     color: white;
 }
 
+.blog-post {
+    max-width: 100vh;
+    font-family: CenturyGothic;
+    color: white;
+}
+
 @font-face {
     font-family: CenturyGothic;
     src: url(fonts/centurygothic.ttf);
@@ -296,6 +302,7 @@ a {
     animation: gradient 5s ease infinite;
     background-size: 400% 400%;
     margin: 1vh;
+    padding: 2vh;
     color: white;
     font-family: CenturyGothic;
     max-width: 100vh;
