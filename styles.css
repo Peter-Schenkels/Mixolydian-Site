@@ -290,6 +290,16 @@ a {
     justify-content: center;
 }
 
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 60vh);
+    grid-template-rows: repeat(auto-fit, 40vh);
+    grid-auto-rows: max-content;
+    gap: 6vh;
+    margin: 3vh;
+    justify-content: center;
+}
+
 .generic-container {
     padding: 1vh;
     display: flex;
@@ -382,7 +392,7 @@ a {
 }
 
 .software-box {
-    background: linear-gradient(-45deg, #ff00001a, #00263f81);
+    background: linear-gradient(-45deg, #d000ff14, #4800951f);
     animation: gradient 5s ease infinite;
     background-size: 400% 400%;
     color: white;
@@ -443,7 +453,7 @@ a {
 }
 
 .album {
-    background: linear-gradient(-45deg, #33ff001a, #490d4652);
+    background: linear-gradient(-45deg, #000dff14, #4800951f);
     animation: gradient 5s ease infinite;
     background-size: 400% 400%;
     padding: 1vh;
@@ -492,6 +502,13 @@ a {
     object-fit: cover;
     width: 100%;
     height: 30%;
+    display: block;
+}
+
+.blog-banner {
+    object-fit: cover;
+    width: 100%;
+    height: 50%;
     display: block;
 }
 

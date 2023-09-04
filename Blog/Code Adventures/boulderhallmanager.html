@@ -1,0 +1,144 @@
+<!DOCTYPE html5>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <title>
+        Mixolydian - Blogs
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <meta charset="UTF-8">
+
+
+    <link href="../../prism.css" rel="stylesheet" />
+    <script src="../../prism.js"></script>
+</head>
+
+<body>
+    <!-- Blog Post 6 -->
+    <div id="006">
+        <div class="center-me">
+            <h1>Boulder Hall Manager - post 003</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#006">Next</a>
+                    <a href="#005">Previous</a>
+                    <a href="#004">First</a>
+                    <a href="#006">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="blog-post">
+                    <h2>Boulder Hall Manager - Path Editor & Outline Renderer</h2>
+                    <p><em>Posted on 4-9-2023 at 02:22 am</em></p>
+
+                    <h4>Path Editor</h4>
+                    <p>Hello, it's 2 am again, so you know what that means! Time to post an update about the latest changes I made to my management game. I made a programming interface for seperate paths, which are visualised by the outline. In the next
+                        update I will probably add some handles for editing already placed grips.
+                    </p>
+                    <div style="text-align:center"> <video width="620" height="440" controls>
+                                    <source src="../../img/videos/boulderhallmanager3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                </video>
+                    </div>
+                    <h4>Outline Shader</h4>
+                    <p>As you can see I also implemented my own Outline shader, which took some hours to make. I don't have alot of experience creating shaders so this was a fun way to learn more about them and the unity render pipeline. In short I created
+                        a custom post processing effect and passed a render texture which contains the meshes of objects that need to be rendered. After that I do some edge detection in the shader and sample 4 points around the center point of the shader
+                        pass. The line width determines how far those points are from the center. For now I'm very happy with the results and what I learned</p>
+
+                    <div style="text-align:center"> <video width="620" height="440" controls>
+                                    <source src="../../img/videos/boulderhallmanager4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                </video>
+                    </div>
+                    <div style="text-align:center"> <video width="620" height="440" controls>
+                                    <source src="../../img/videos/boulderhallmanager5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Post 5 -->
+    <div id="005">
+        <div class="center-me">
+            <h1>Boulder Hall Manager - post 002</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#006">Next</a>
+                    <a href="#004">Previous</a>
+                    <a href="#004">First</a>
+                    <a href="#006">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="blog-post">
+                    <h2>Boulder Hall Manager GUI</h2>
+                    <p><em>Posted on 24-8-2023 at 02:14 am</em></p>
+                    <p>Basic creation features</p>
+                    <p>Today I created a basic GUI for offering a few building features to the player, these features include placing and destructing wall segments and creating simple boulder routes with a selected difficulty/color</p>
+                    <p>If have time again I will work on expanding the path/route creation</p>
+
+                    <div style="text-align:center"> <video width="620" height="440" controls>
+                        <source src="../../img/videos/boulderhallmanager2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Post 4 -->
+    <div id="004">
+        <div class="center-me">
+            <h1>Boulder Hall Manager - post 001</h1>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="button-container">
+                    <a href="#005">Next</a>
+                    <a href="#004">Previous</a>
+                    <a href="#004">First</a>
+                    <a href="#006">Top</a>
+                </div>
+            </div>
+        </div>
+        <div class="generic-container">
+            <div class="generic-box">
+                <div class="blog-post">
+                    <h2>Boulder Track Builder - proof of concept</h2>
+                    <p><em>Posted on 14-8-2023 at 01:33</em></p>
+                    <p>Here is a small POC (for myself) for creating a boulder track builder</p>
+                    <p>I've been enjoying bouldering recently and a game concept of a boulder hall tycoon/manager is forming in my head, so I will try to create it in unity :)</p>
+                    <div style="text-align:center"> <video width="620" height="440" controls>
+                        <source src="../../img/videos/bouldermanager1.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <h3>© Copyright 2023 Peter Schenkels - All Rights Reserved</h3>
+    </footer>
+</body>
+
+</html>

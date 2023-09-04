@@ -1,0 +1,76 @@
+<!DOCTYPE html5>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <title>
+        Mixolydian - Blogs
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1 class="title">
+        Peter Schenkels
+    </h1>
+    <p class="title">
+        Producer, Musician, Programmer, Game Developer
+    </p>
+    </div>
+
+    <div class="software" id="software">
+        <div class="center-me">
+            <h1>
+                Blogs
+            </h1>
+        </div>
+    </div>
+
+    <div class="blog-container">
+        <!-- Start Software -->
+        <div class="software-box">
+            <a href="Code Adventures/boulderhallmanager.html">
+                <img class="blog-banner" src="../img/boulderhall manager.png">
+                <div class="software-about">
+                    <h1>Boulder Hall Manager</h1>
+
+                </div>
+            </a>
+        </div>
+        <div class="software-box">
+            <a href="Code Adventures/pixelvisualiser.html">
+                <img class="blog-banner" src="https://github.com/Peter-Schenkels/Pixel-Visualiser/blob/main/Examples/Colored%20Squares/squares.gif?raw=true">
+                <div class="software-about">
+                    <h1>Pixel Visualiser</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <h3>© Copyright 2023 Peter Schenkels - All Rights Reserved</h3>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+
+
+<script>
+    $(document).scroll(function() {
+        var scrollTop = $(this).scrollTop();
+        var scrollSpeed = 0.1;
+        var newPosition = -(scrollTop * scrollSpeed);
+        $('body').css('background-position-y', newPosition + 'px');
+    });
+</script>
